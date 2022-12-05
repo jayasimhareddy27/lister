@@ -8,10 +8,10 @@ function StudentForm() {
     const [student , setStudent]=useState({ RollNumber:'',Name:'',Grade:''} );
     function onFormFieldChange(e){setStudent({...student,[e.target.name]:e.target.value}) }
     async function fetchpost(){
-        const res=await axios.post('http://localhost:5000/studentUrl/students',student);
+        const res=await axios.post('https://crudserver-deyi.vercel.app/studentUrl/students',student);
         console.log((res.data));
         
-        /*fetch('http://localhost:5000/studentUrl/students', {method: 'POST',headers: {'Content-Type': 'application/json;charset=utf-8'},body: JSON.stringify(student)})
+        /*fetch('https://crudserver-deyi.vercel.app/studentUrl/students', {method: 'POST',headers: {'Content-Type': 'application/json;charset=utf-8'},body: JSON.stringify(student)})
         .then(response => response.json()).then(json => console.log(json))
         .catch((err)=>console.log({message:err.message}));*/
     }

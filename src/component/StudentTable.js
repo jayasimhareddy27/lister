@@ -5,10 +5,10 @@ import { useEffect,useState } from 'react';
 function StudentTable(){
     const [studentList , setStudent]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:5000/studentUrl/students').then((allstudents)=>{setStudent(allstudents.data)})
+        axios.get('https://crudserver-deyi.vercel.app/studentUrl/students').then((allstudents)=>{setStudent(allstudents.data)})
     },[]);
     async function del(id){
-        await axios.delete(`http://localhost:5000/studentUrl/students/${id}`)
+        await axios.delete(`https://crudserver-deyi.vercel.app/studentUrl/students/${id}`)
         .then(()=>{console.log("success");}).then(()=>{window.location.reload(false)})
         .catch(()=>{console.log("failed");})
     }
